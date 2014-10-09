@@ -1,0 +1,54 @@
+v1.0 (target) - complete site generator, proper user management, complete media backoffice
+
+v0.5 (in progress) - simple site generator
+
+- sql generator
+
+v0.4.1 (2005-11-17) - improved backoffice
+
+- upload media
+- add to table article fields id_user, creation_date, begin_date, end_date, active
+- add to table category field active
+- list, create, modify and erase feeds (Sapo version)
+- list, create, modify and erase end_points (Sapo version)
+- order columns in lists
+- search
+- new buttons
+- fast modify and fast delete
+- list, create, modify and erase comments
+- added tags to articles
+- added support for multiple categories in articles
+
+v0.4 (2005-07-06) - basic media backoffice
+
+- list, create, modify and erase Media
+- several database optimizations (int sizes and date types)
+- select all items in list
+- improve pool backoffice
+- pool component (preliminary version)
+
+v0.3 (2005-03-11) - pooling backoffice
+
+- redesigned css for forms
+- corrected bug in erasing articles with no category
+- created structure of menus for site, images and pools
+- list, create, modify and erase site
+- list, create, modify and erase pool
+- focus on first item of every form
+- first/last page on pagination
+- maximum of 5 pages in pagination
+
+v0.2 (2005-03-10) - proper design and layout
+
+- redesigned in css
+- redesigned layout of forms and tables
+- multiple erase
+- paginated lists
+- only erases categories if they are not being used
+- separated operations in two files, to avoid problems with refresh
+
+v0.1 (2005-02-26) - minimum stuff
+
+- basic login
+- list, create, modify and erase category
+- list, create, modify and erase article

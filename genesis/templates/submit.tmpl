@@ -1,0 +1,42 @@
+<?php
+   include("session.php");
+	include("database.php");
+
+	$page = $_POST['page'];
+   $action = $_POST['action'];
+   $id = $_POST['id'];
+	$msg = '';
+
+%%post%%
+
+%%verification%%
+
+   if ($msg == ''){
+		if ($action == "create2"){
+      	$query = "insert into %%name%% (%%listFields%%) values (%%listValues%%)";
+     		mysql_query($query) or die("Invalid query: " . mysql_error());
+   	}
+
+		if ($action == "modify2") {
+     		$query = "update %%name%% set %%listUpdateFields%% where %%primaryKey%%=$id";
+   	   mysql_query($query) or die("Invalid query: " . mysql_error());
+		}
+   
+ 	  if ($action == "erase2") {
+   	   foreach ($id as $idx) {
+	         $query = "delete from %%name%% where %%primaryKey%%=$idx";
+         	mysql_query($query) or die("Invalid query: " . mysql_error());
+     		}
+   	}
+   	
+	} else {
+	   $_SESSION["msg"] = $msg;
+	}
+	
+   if ($page){
+		header ("Location: %%name%%.php?page=$page");
+	} else {
+		header ("Location: %%name%%.php");
+	}
+   exit;
+?>

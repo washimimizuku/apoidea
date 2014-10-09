@@ -1,0 +1,34 @@
+<?php
+   if ($action == "erase") {
+?>
+   <div id="content">
+      <h2><a href="%%name%%.php">%%title%%</a> > Apagar %%title%%</h2>
+      <div class="tabela">
+         <form method="post" action="%%name%%_submit.php">
+            <input type="hidden" name="page" value="<?php echo($page) ?>" />
+            <input type="hidden" name="action" value="erase2" />
+            <table>
+               <tr class="title">
+%%listTableColumns%%
+               </tr>
+<?php
+      foreach ($id as $idx) {
+         $query = "select %%listFields%% from %%name%% where %%primaryKey%%='$idx'";
+         $result = mysql_query($query) or die("Invalid query: " . mysql_error());
+         $row = mysql_fetch_row($result) or die("Could not retrieve row: " . mysql_error());
+?>
+               <tr class="dark">
+%%listTableRows%%
+               </tr>
+					<input type="hidden" name="id[]" value="<?php echo($idx); ?>" />
+<?php
+      }
+?>
+               <tr><td class="buttons" colspan="%%numColumns%%"><input class="image_button" type="image" src="images/apagar.png" value="Apagar" onclick="javascript: form.submit;" /><input class="image_button" type="image" src="images/cancelar.png" value="Cancelar" onclick="javascript:document.location='%%name%%.php';return false;" /></td></tr>
+            </table>
+         </form>
+      </div>
+   </div>
+<?php
+   } 
+?>

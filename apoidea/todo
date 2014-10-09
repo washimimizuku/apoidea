@@ -1,0 +1,45 @@
+High Priority
+
+- comments for articles component
+- trackback component
+- menu component
+- pub component
+- ad hoc component
+- Site separation
+- Site generator
+    - Several kinds of designs (3 cols, 2 cols, 1 col, etc)
+    - Different homepage layout
+    - Different top images (?)
+- proper user management
+- backoffice standardization - make every page alike (auto code generator)
+- Feed RSS/Atom
+- organize project directories
+
+Medium Priority
+
+- active/unactive article/category
+- multiple article modify
+- check out/check in article
+- order articles (not in backoffice)
+- transform text in html(maybe create markup language similar to wikipedia?)
+- begin and end of article life
+- only show items in list with specific criteria (only answers from pool x)
+- related articles
+- form component
+
+Low Priority
+
+- Photo gallery
+- publicity
+- directory (for bird lists with categories, for example
+- Allow choosing colors in polls
+- statistics
+
+Thinking
+
+- AJAX for backoffice
+   - When pressing a field in the table, lets you change it
+- delete and modify buttons for each row
+   
+   
+   

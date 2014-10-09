@@ -1,0 +1,26 @@
+<?php
+   if ($action == "create")  {
+?>
+   <div id="content">
+      <h2><a href="%%name%%.php">%%title%%</a> > Criar %%title%%</h2>
+<?php
+	if ($msg) {
+?>
+      <p class="message"><?php echo($msg) ?></p>
+<?php
+	}
+?>
+      <div class="tabela">
+         <form name="form" method="post" action="%%name%%_submit.php">
+            <input type="hidden" name="action" value="create2" />
+            <input type="hidden" name="id" value="<?php echo($id) ?>" />
+            <table>
+%%listCreateRows%%
+               <tr><td class="buttons" colspan="2"><input class="image_button" type="image" src="images/criar.png" value="Criar" onclick="javascript: form.submit;" /><input class="image_button" type="image" src="images/cancelar.png" value="Cancelar" onclick="javascript:document.location='%%name%%.php';return false;" /></td></tr>
+            </table>
+         </form>
+      </div>
+   </div>
+<?php
+   }
+?>

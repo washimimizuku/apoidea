@@ -1,0 +1,24 @@
+<?php
+   if ($action == "modify"){
+      $query = "select %%listFields%% from %%name%% where %%primaryKey%%='$id[0]'";
+      $result = mysql_query($query) or die("Invalid query: " . mysql_error());
+      $row = mysql_fetch_row($result) or die("Could not retrieve row: " . mysql_error());
+?>
+   <div id="content">
+      <h2><a href="%%name%%.php">%%title%%</a> > Alterar %%title%%</h2>
+      <div class="tabela">
+         <form name="form" method="post" action="%%name%%_submit.php">
+            <input type="hidden" name="creation_date" value="<?php echo($creation_date) ?>" />
+            <input type="hidden" name="page" value="<?php echo($page) ?>" />
+            <input type="hidden" name="action" value="modify2" />
+            <input type="hidden" name="id" value="<?php echo($id[0]) ?>" />
+            <table>
+%%listModifyRows%%
+               <tr><td class="buttons" colspan="2"><input class="image_button" type="image" src="images/alterar.png" value="Alterar" onclick="javascript: form.submit;" /><input class="image_button" type="image" src="images/cancelar.png" value="Cancelar" onclick="javascript:document.location='%%name%%.php';return false;" /></td></tr>
+            </table>
+         </form>
+      </div>
+   </div>
+<?php
+   }
+?>

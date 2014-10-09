@@ -1,0 +1,25 @@
+<?php
+	include("session.php");
+   
+	// Action
+   $action = $_REQUEST['action'];
+   $search = $_REQUEST['search'];
+   $order  = $_REQUEST['order'];
+
+	$msg = $_SESSION['msg'];
+	$_SESSION['msg'] = '';
+
+   $id = $_REQUEST['id'];
+   if (!isset($id)) {
+      if ($action == "modify") {
+         $msg = "Tem de seleccionar uma das linhas!";
+         $action = "";
+      } else if ($action == "erase") {
+         $msg = "Tem de seleccionar pelo menos uma das linha!";
+         $action = "";
+      }
+   }
+      
+   include("header.php");
+   include("menu.php");   
+?>
