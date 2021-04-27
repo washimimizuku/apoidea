@@ -11,7 +11,7 @@ xml = binderytools.bind_file('blueprint.xml')
 # Move old apoidea to apoidea.old
 
 # Create apoidea
-backofficeDirectory = "~/Sites/engage/"
+backofficeDirectory = "./apoidea"
 if os.path.exists(backofficeDirectory):
     shutil.rmtree(backofficeDirectory)
 

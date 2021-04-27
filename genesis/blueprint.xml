@@ -1,28 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <blueprint>
-        <menu>
-                <name>Sistema</name>
-                <entity>tribe</entity>
-                <entity>user</entity>
-        </menu>
-        <menu>
-                <name>Feed</name>
-                <entity>category</entity>
-                <entity>endPoint</entity>
-                <entity>feed</entity>
-                <entity>feedDatabase</entity>
-        </menu>
-        <entity>
-                <name>tribe</name>
-                <title>Grupo</title>
-                <descriptionElement>name</descriptionElement>
-                <rows>10</rows>
+   <menu>
+      <name>Sistema</name>
+      <entity>tribe</entity>
+      <entity>user</entity>
+   </menu>
+   <menu>
+      <name>Feed</name>
+      <entity>category</entity>
+      <entity>endPoint</entity>
+      <entity>feed</entity>
+      <entity>feedDatabase</entity>
+   </menu>
+   <entity>
+      <name>tribe</name>
+      <title>Grupo</title>
+      <descriptionElement>name</descriptionElement>
+      <rows>10</rows>
       <element>
          <name>id</name>
          <type>tinyint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <header>1</header>
          <primaryKey>1</primaryKey>
@@ -35,30 +36,29 @@
          <order>1</order>
          <search>1</search>
       </element>
-
       <insert>
-                        <value>1</value>
-                        <value>Administrator</value>
+         <value>1</value>
+         <value>Administrator</value>
       </insert>
       <insert>
-                        <value>2</value>
-                        <value>Manager</value>
+         <value>2</value>
+         <value>Manager</value>
       </insert>
       <insert>
-                        <value>3</value>
-                        <value>Publisher</value>
+         <value>3</value>
+         <value>Publisher</value>
       </insert>
       <insert>
-                        <value>4</value>
-                        <value>Editor</value>
+         <value>4</value>
+         <value>Editor</value>
       </insert>
       <insert>
-                        <value>5</value>
-                        <value>Author</value>
+         <value>5</value>
+         <value>Author</value>
       </insert>
       <insert>
-                        <value>6</value>
-                        <value>User</value>
+         <value>6</value>
+         <value>User</value>
       </insert>
    </entity>
    <entity>
@@ -69,10 +69,10 @@
       <element>
          <name>id</name>
          <type>smallint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <header>1</header>
          <primaryKey>1</primaryKey>
@@ -80,8 +80,8 @@
       <element>
          <name>tribeID</name>
          <type>tinyint</type>
-                        <foreignKey>tribe</foreignKey>
-                        <unsigned>1</unsigned>
+         <foreignKey>tribe</foreignKey>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <title>Grupo</title>
          <header>1</header>
@@ -110,28 +110,27 @@
          <type>varchar(255)</type>
          <notNull>1</notNull>
          <title>Password</title>
-                        <password>1</password>
+         <password>1</password>
       </element>
-
       <insert>
-                        <value>1</value>
-                        <value>1</value>
-                        <value>Nuno Barreto</value>
-                        <value>nbarr</value>
-                        <value>78b21db081f166277f645bf06131a8a1</value>
+         <value>1</value>
+         <value>1</value>
+         <value>Nuno Barreto</value>
+         <value>nbarreto</value>
+         <value>989d5e24855244c414022b21870222e2</value>
       </insert>
    </entity>
    <entity>
       <name>article</name>
-                <title>Artigo</title>
+      <title>Artigo</title>
       <rows>20</rows>
       <element>
          <name>id</name>
          <type>mediumint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <header>1</header>
          <primaryKey>1</primaryKey>
@@ -139,9 +138,9 @@
       <element>
          <name>userID</name>
          <type>mediumint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <title>Utilizador</title>
-                        <foreignKey>user</foreignKey>
+         <foreignKey>user</foreignKey>
       </element>
       <element>
          <name>creationDate</name>
@@ -197,18 +196,18 @@
          <header>1</header>
       </element>
    </entity>
-        <entity>
+   <entity>
       <name>category</name>
-                <title>Categoria</title>
+      <title>Categoria</title>
       <rows>20</rows>
       <descriptionElement>name</descriptionElement>
       <element>
          <name>id</name>
          <type>smallint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <primaryKey>1</primaryKey>
       </element>
@@ -216,8 +215,8 @@
          <name>parentCategoryID</name>
          <type>smallint</type>
          <title>Categoria Acima</title>
-                        <unsigned>1</unsigned>
-                        <foreignKey>category</foreignKey>
+         <unsigned>1</unsigned>
+         <foreignKey>category</foreignKey>
       </element>
       <element>
          <name>name</name>
@@ -245,18 +244,18 @@
          <title>Feed</title>
          <header>1</header>
       </element>
-        </entity>
+   </entity>
    <entity>
       <name>endPoint</name>
-                <title>End Point</title>
+      <title>End Point</title>
       <rows>20</rows>
       <element>
          <name>id</name>
          <type>bigint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <primaryKey>1</primaryKey>
       </element>
@@ -264,17 +263,17 @@
          <name>categoryID</name>
          <type>bigint</type>
          <title>Categoria</title>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <header>1</header>
-                        <foreignKey>category</foreignKey>
+         <foreignKey>category</foreignKey>
       </element>
       <element>
          <name>feedID</name>
          <type>bigint</type>
          <title>Feed</title>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <header>1</header>
-                        <foreignKey>feed</foreignKey>
+         <foreignKey>feed</foreignKey>
       </element>
       <element>
          <name>template</name>
@@ -286,29 +285,29 @@
          <name>ttl</name>
          <type>int</type>
          <title>TTL</title>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <header>1</header>
       </element>
       <element>
          <name>maxEntries</name>
          <type>int</type>
          <title>Máximo Artigos</title>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <header>1</header>
       </element>
    </entity>
    <entity>
       <name>feed</name>
-                <title>Feed</title>
+      <title>Feed</title>
       <rows>20</rows>
       <descriptionElement>title</descriptionElement>
       <element>
          <name>id</name>
          <type>bigint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <primaryKey>1</primaryKey>
       </element>
@@ -317,7 +316,7 @@
          <type>varchar(255)</type>
          <title>Título</title>
          <header>1</header>
-     </element>
+      </element>
       <element>
          <name>subtitle</name>
          <type>varchar(255)</type>
@@ -383,9 +382,9 @@
          <name>sourceTypeID</name>
          <type>smallint</type>
          <title>Tipo de Fonte</title>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <header>1</header>
-                        <foreignKey>sourceType</foreignKey>
+         <foreignKey>sourceType</foreignKey>
       </element>
       <element>
          <name>sourceDescription</name>
@@ -397,28 +396,28 @@
          <name>ttl</name>
          <type>int</type>
          <title>TTL</title>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
       </element>
       <element>
          <name>autoTTL</name>
          <type>int</type>
          <title>TTL automático</title>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <hidden>1</hidden>
       </element>
    </entity>
    <entity>
       <name>repository</name>
-                <title>Repositório</title>
+      <title>Repositório</title>
       <rows>20</rows>
       <descriptionElement>title</descriptionElement>
       <element>
          <name>id</name>
          <type>bigint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <primaryKey>1</primaryKey>
       </element>
@@ -426,8 +425,8 @@
          <name>feedID</name>
          <type>bigint</type>
          <title>Feed</title>
-                        <unsigned>1</unsigned>
-                        <foreignKey>feed</foreignKey>
+         <unsigned>1</unsigned>
+         <foreignKey>feed</foreignKey>
       </element>
       <element>
          <name>title</name>
@@ -478,15 +477,15 @@
    </entity>
    <entity>
       <name>enclosure</name>
-                <title>Enclosure</title>
+      <title>Enclosure</title>
       <rows>20</rows>
       <element>
          <name>id</name>
          <type>bigint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <primaryKey>1</primaryKey>
       </element>
@@ -494,8 +493,8 @@
          <name>repositoryID</name>
          <type>bigint</type>
          <title>Repositório</title>
-                        <unsigned>1</unsigned>
-                        <foreignKey>repository</foreignKey>
+         <unsigned>1</unsigned>
+         <foreignKey>repository</foreignKey>
       </element>
       <element>
          <name>mimeType</name>
@@ -515,16 +514,16 @@
    </entity>
    <entity>
       <name>sourceType</name>
-                <title>Tipo de Origem</title>
+      <title>Tipo de Origem</title>
       <rows>20</rows>
       <descriptionElement>name</descriptionElement>
       <element>
          <name>id</name>
          <type>bigint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <primaryKey>1</primaryKey>
       </element>
@@ -543,15 +542,15 @@
    </entity>
    <entity>
       <name>feedDatabase</name>
-                <title>Base de Dados do Feed</title>
+      <title>Base de Dados do Feed</title>
       <rows>20</rows>
       <element>
          <name>id</name>
          <type>tinyint</type>
-                        <unsigned>1</unsigned>
+         <unsigned>1</unsigned>
          <notNull>1</notNull>
          <unique>1</unique>
-                        <autoIncrement>1</autoIncrement>
+         <autoIncrement>1</autoIncrement>
          <title>ID</title>
          <header>1</header>
          <primaryKey>1</primaryKey>

@@ -39,7 +39,7 @@ create table user (
    key (id_tribe)
 );
 
-insert into user values('1', '1', 'Nuno Barreto', 'nbarr', '78b21db081f166277f645bf06131a8a1');
+insert into user values('1', '1', 'Nuno Barreto', 'nbarreto', '989d5e24855244c414022b21870222e2');
 
 create table rel_site_user (
    id_site smallint unsigned not null,

@@ -106,6 +106,7 @@ def use_setuptools(
     except pkg_resources.DistributionNotFound:
         return do_download()
 
+
 def download_setuptools(
     version=DEFAULT_VERSION, download_base=DEFAULT_URL, to_dir=os.curdir,
     delay = 15
@@ -152,40 +153,6 @@ and place it in this directory before rerunning this script.)
             if src: src.close()
             if dst: dst.close()
     return os.path.realpath(saveto)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def main(argv, version=DEFAULT_VERSION):
@@ -265,8 +232,3 @@ if __name__=='__main__':
         update_md5(sys.argv[2:])
     else:
         main(sys.argv[1:])
-
-
-
-
-

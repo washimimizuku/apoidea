@@ -39,7 +39,7 @@ create table user (
    key (id_tribe)
 );
 
-insert into user values('1', '1', 'Nuno Barreto', 'nbarr', '78b21db081f166277f645bf06131a8a1');
+insert into user values('1', '1', 'Nuno Barreto', 'nbarreto', '989d5e24855244c414022b21870222e2');
 
 create table rel_site_user (
    id_site smallint unsigned not null,
@@ -294,79 +294,3 @@ create table link (
   key (id_link_list),
   primary key (id) 
 );
-
---------------------------------------------------------------------------------------
--- Sapo stuff (may be usefull in the future) --
-
--- Feeds --
-
-create table end_point (
-  id bigint unsigned not null unique auto_increment,
-  id_category bigint unsigned,
-  id_feed bigint unsigned,
-  template varchar(255),
-  ttl int unsigned,
-  max_entries int unsigned,
-  primary key (id),
-  key (id_feed, id_category)
-);
-
-create table feed (
-  id bigint unsigned not null unique auto_increment,
-  title varchar(255),
-  url varchar(255),
-  subtitle varchar(255),
-  language varchar(255),
-  pub_date datetime,
-  last_build_date datetime,
-  docs_url varchar(255),
-  generator varchar(255),
-  managing_editor varchar(255),
-  webmaster varchar(255),
-  copyright varchar(255),
-  guid varchar(255),
-  source_type varchar(255),
-  source_description varchar(255),
-  ttl int unsigned,
-  auto_ttl int unsigned,
-  primary key (id)
-);
-
-create table repository (
-  id bigint unsigned not null unique auto_increment,
-  id_feed bigint unsigned,
-  title varchar(255),
-  description blob,
-  pub_date datetime,
-  author varchar(255),
-  category varchar(255),
-  comments_url varchar(255),
-  guid varchar(255),
-  primary key (id),
-  key (id_feed)
-);
-
-create table enclosure (
-  id bigint unsigned not null unique auto_increment,
-  id_repository bigint unsigned,
-  mime_type varchar(255),
-  length varchar(255),
-  url  varchar(255),
-  primary key (id),
-  key (id_repository)
-);
-
-create table source_type (
-  id int unsigned not null unique auto_increment,
-  name varchar(255) not null,
-  driver varchar(255) not null,
-  primary key (id)
-);
-
-insert into source_type values (1, 'Cyclops', 'CyclopsCollector');
-insert into source_type values (2, 'Bricolage', 'BricolageCollector');
-insert into source_type values (3, 'RSS2', 'RSS2Collector');
-insert into source_type values (4, 'RSSX','RSSXCollector');
-insert into source_type values (5, 'Atom','AtomCollector');
-
-
